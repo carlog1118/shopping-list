@@ -1,3 +1,4 @@
+$(function(){
 $('#js-shopping-list-form').on('submit', function(event){
   var text= $("#shopping-list-entry").val();
   $('.shopping-list').append(`<li>
@@ -11,10 +12,10 @@ $('#js-shopping-list-form').on('submit', function(event){
       </button>
     </div>
   </li>`); 
-  $('#shopping-llist-entry').val(' ');
   event.preventDefault();
 });
-
-$('.shopping-item-delete').on('click', function(){
-    $(li).remove();
+$('.shopping-list').on('click', '.shopping-item-delete', function(event){
+    this.closest('li').remove();
 })
+});
+
