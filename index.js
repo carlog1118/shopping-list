@@ -1,4 +1,4 @@
-$(function(){
+//add item
 $('#js-shopping-list-form').on('submit', function(event){
   var text= $("#shopping-list-entry").val();
   $('.shopping-list').append(`<li>
@@ -14,8 +14,17 @@ $('#js-shopping-list-form').on('submit', function(event){
   </li>`); 
   event.preventDefault();
 });
+
+//remove item
 $('.shopping-list').on('click', '.shopping-item-delete', function(event){
     this.closest('li').remove();
-})
 });
+
+//check item
+$('ul').on('click', '.shopping-item-toggle', function(event){
+    $(this).closest('li').children('.shopping-item').toggleClass('shopping-item__checked');
+});
+
+
+
 
